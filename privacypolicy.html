@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Megaton Compliance Consulting</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==========================================================================
+           1. DESIGN SYSTEM VARIABLES (Sophisticated Dark Mode Palette)
+           ========================================================================== */
+        :root {
+            --bg-charcoal: #0a0f0d;
+            --bg-slate: #121a16;
+            --bg-slate-light: #1f2c25;
+            --text-primary: #C8E6C9;
+            --text-muted: #64B069;
+            --text-dark: #0a0f0d;
+            
+            --accent-teal: #C8E6C9;
+            --accent-indigo: #64B069;
+            --accent-gradient: linear-gradient(135deg, #C8E6C9 0%, #64B069 100%);
+            
+            --color-success: #31ed90;
+            --color-warning: #ff3b3b;
+            --border-color: rgba(49, 237, 144, 0.15);
+            
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.5);
+            --shadow-md: 0 12px 24px -4px rgba(0, 0, 0, 0.7);
+            --shadow-lg: 0 20px 40px -8px rgba(0, 0, 0, 0.8);
+            --shadow-glow-teal: 0 0 15px rgba(49, 237, 144, 0.4);
+            --shadow-glow-indigo: 0 0 15px rgba(21, 102, 63, 0.3);
+            
+            --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* ==========================================================================
+           2. GLOBAL BASE & RESET
+           ========================================================================== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            color: var(--text-primary);
+            background-color: var(--bg-charcoal);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Sora', system-ui, sans-serif;
+            font-weight: 700;
+            line-height: 1.25;
+            color: var(--text-primary);
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: #464feb;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Dynamic Decorative Mesh Overlay */
+        .grid-backdrop {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(rgba(99, 102, 241, 0.04) 1px, transparent 1px);
+            background-size: 24px 24px;
+            pointer-events: none;
+            z-index: -2;
+        }
+
+        /* Ambient Glowing Orbs */
+        .ambient-orb-top {
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(20, 184, 166, 0.08) 0%, transparent 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .ambient-orb-mid {
+            position: absolute;
+            top: 45%;
+            left: -200px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.05) 0%, transparent 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* ==========================================================================
+           3. STICKY PREMIUM HEADER & NAVIGATION
+           ========================================================================== */
+        header {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            background-color: rgba(10, 15, 13, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 0;
+            transition: var(--transition-smooth);
+        }
+
+        header.scrolled {
+            padding: 14px 0;
+            box-shadow: var(--shadow-md);
+            background-color: rgba(10, 15, 13, 0.98);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+        }
+
+        nav {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            letter-spacing: -0.2px;
+            padding: 8px 0;
+            position: relative;
+            text-decoration: none;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent-teal);
+            text-shadow: 0 0 5px var(--accent-teal);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--text-primary);
+            box-shadow: 0 0 8px var(--accent-teal);
+            border-radius: 10px;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Sora', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--text-primary);
+            text-shadow: 0 0 8px rgba(49, 237, 144, 0.5);
+            text-decoration: none;
+        }
+
+        .logo-word {
+            color: var(--text-primary);
+            font-weight: 800;
+        }
+
+        .logo-word-light {
+            color: var(--text-primary);
+            opacity: 0.6;
+            font-weight: 400;
+        }
+
+        /* ==========================================================================
+           4. CONTENT SECTIONS
+           ========================================================================== */
+        .policy-section {
+            padding: 80px 0;
+            flex: 1;
+            position: relative;
+        }
+
+        .policy-content {
+            max-width: 900px;
+        }
+
+        .policy-content h1 {
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            letter-spacing: -1px;
+            margin-bottom: 40px;
+            color: var(--text-primary);
+        }
+
+        .policy-content h2 {
+            font-size: 1.75rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        .policy-content strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .policy-content p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: var(--text-muted);
+        }
+
+        .policy-content ul {
+            margin: 20px 0 20px 30px;
+            color: var(--text-muted);
+        }
+
+        .policy-content li {
+            margin-bottom: 12px;
+            line-height: 1.8;
+        }
+
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+        }
+
+        tr th, tr td {
+            border: 1px solid #e6e6e6;
+            padding: 12px 16px;
+            text-align: left;
+        }
+
+        tr th {
+            background-color: #f5f5f5;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        /* ==========================================================================
+           5. FOOTER
+           ========================================================================== */
+        footer {
+            background-color: var(--bg-charcoal);
+            border-top: 1px solid var(--border-color);
+            padding: 60px 0 40px 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: auto;
+        }
+
+        .footer-layout {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand .logo {
+            margin-bottom: 12px;
+        }
+
+        .footer-brand p {
+            font-size: 0.85rem;
+            max-width: 320px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 40px;
+        }
+
+        .footer-links a {
+            color: var(--accent-teal);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+
+        .footer-links a:hover {
+            opacity: 0.85;
+        }
+
+        .footer-copyright {
+            border-top: 1px solid var(--border-color);
+            padding-top: 24px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: rgba(49, 237, 144, 0.2);
+        }
+
+        /* ==========================================================================
+           6. RESPONSIVE MEDIA BREAKPOINTS
+           ========================================================================== */
+        @media (max-width: 768px) {
+            .policy-content h1 {
+                font-size: 1.75rem;
+            }
+
+            .policy-content h2 {
+                font-size: 1.35rem;
+            }
+
+            .policy-section {
+                padding: 40px 0;
+            }
+
+            .footer-layout {
+                flex-direction: column;
+                text-align: center;
+                gap: 32px;
+            }
+
+            .footer-links {
+                justify-content: center;
+            }
+
+            .container {
+                padding: 0 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid-backdrop"></div>
+    <div class="ambient-orb-top"></div>
+    <div class="ambient-orb-mid"></div>
+
+    <header id="mainHeader">
+        <div class="container nav-wrapper">
+            <a href="index.html" class="logo">
+                <span class="logo-word">MEGATON</span> <span class="logo-word logo-word-light">COMPLIANCE</span>
+            </a>
+            
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="policy-section">
+        <div class="container">
+            <div class="policy-content">
+                <h1>Privacy Policy</h1>
+
+                <p><strong>Effective Date:</strong> July 14, 2026</p>
+
+                <p>Megaton Compliance Consulting ("we," "our," or "us") is committed to protecting your privacy and safeguarding any personal information you provide through our website.</p>
+
+                <h2>Information We Collect</h2>
+
+                <p>We may collect the following information when you interact with our website:</p>
+
+                <ul>
+                    <li>Name</li>
+                    <li>Email address</li>
+                    <li>Company name</li>
+                    <li>Information submitted through contact forms</li>
+                    <li>Information voluntarily provided through self-assessment tools, questionnaires, or consultations</li>
+                </ul>
+
+                <p>We may also collect limited technical information such as:</p>
+
+                <ul>
+                    <li>IP address</li>
+                    <li>Browser type</li>
+                    <li>Device information</li>
+                    <li>Website usage data through analytics tools</li>
+                </ul>
+
+                <h2>How We Use Your Information</h2>
+
+                <p>We use the information we collect to:</p>
+
+                <ul>
+                    <li>Respond to inquiries and consultation requests</li>
+                    <li>Provide access to downloadable resources and assessment tools</li>
+                    <li>Deliver requested information and services</li>
+                    <li>Improve our website and consulting services</li>
+                    <li>Communicate relevant updates, resources, or service offerings</li>
+                </ul>
+
+                <p>We do not sell, rent, or trade your personal information to third parties.</p>
+
+                <h2>Email Communications</h2>
+
+                <p>If you provide your email address, we may contact you regarding:</p>
+
+                <ul>
+                    <li>Requested resources or downloads</li>
+                    <li>Consultation services</li>
+                    <li>Relevant compliance and accreditation information</li>
+                </ul>
+
+                <p>You may unsubscribe from promotional communications at any time by contacting us directly.</p>
+
+                <h2>Data Security</h2>
+
+                <p>We implement reasonable administrative, technical, and physical safeguards to protect personal information against unauthorized access, disclosure, alteration, or destruction.</p>
+
+                <p>While we take appropriate precautions, no method of transmitting information over the internet can be guaranteed to be completely secure.</p>
+
+                <h2>Third-Party Services</h2>
+
+                <p>Our website may utilize third-party service providers for:</p>
+
+                <ul>
+                    <li>Website hosting</li>
+                    <li>Analytics</li>
+                    <li>Email delivery</li>
+                    <li>Form submissions</li>
+                </ul>
+
+                <p>These providers may process information solely for the purpose of supporting our business operations.</p>
+
+                <h2>Cookies</h2>
+
+                <p>Our website may use cookies and similar technologies to improve functionality, analyze website performance, and enhance user experience.</p>
+
+                <p>You may configure your browser to refuse cookies; however, some website features may not function properly.</p>
+
+                <h2>Retention of Information</h2>
+
+                <p>We retain personal information only as long as necessary to:</p>
+
+                <ul>
+                    <li>Fulfill the purpose for which it was collected</li>
+                    <li>Meet legal or regulatory obligations</li>
+                    <li>Support ongoing business relationships</li>
+                </ul>
+
+                <h2>Your Rights</h2>
+
+                <p>Depending on your jurisdiction, you may have the right to:</p>
+
+                <ul>
+                    <li>Request access to your personal information</li>
+                    <li>Request correction of inaccurate information</li>
+                    <li>Request deletion of your personal information</li>
+                    <li>Withdraw consent for future communications</li>
+                </ul>
+
+                <p>To exercise these rights, please contact us using the information below.</p>
+
+                <h2>Contact Information</h2>
+
+                <p>If you have any questions regarding this Privacy Policy or our privacy practices, please contact:</p>
+
+                <p><strong>Megaton Compliance Consulting</strong></p>
+
+                <p>Email: <em>[your email address]</em></p>
+
+                <h2>Changes to This Policy</h2>
+
+                <p>We may update this Privacy Policy periodically to reflect changes in our services, legal requirements, or business practices. Any updates will be posted on this page with a revised effective date.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-layout">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo"><span class="logo-word">MEGATON</span> <span class="logo-word logo-word-light">COMPLIANCE</span></a>
+                    <p>High-end technical consultation services enabling laboratories to achieve and maintain robust standard conformance profiles.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="privacypolicy.html">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                © <span id="currentYear"></span> Megaton Compliance Consulting. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Set dynamic date update inside standard page footer
+        document.getElementById('currentYear').innerText = new Date().getFullYear();
+
+        // Sticky Navbar styling behavior on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('mainHeader');
+            if (window.scrollY > 40) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
