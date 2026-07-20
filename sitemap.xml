@@ -8,4 +8,8 @@
     <loc>https://megatoncompliance.ca/contact.html</loc>
     <priority>0.8</priority>
   </url>
+   <url>
+    <loc>https://megatoncompliance.ca/shop.html</loc>
+    <priority>0.8</priority>
+  </url>
 </urlset>
